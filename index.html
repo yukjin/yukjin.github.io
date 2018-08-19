@@ -147,6 +147,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hazelcast-配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/19/Hazelcast-配置/">Hazelcast 配置</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/19/Hazelcast-配置/" class="archive-article-date">
+  	<time datetime="2018-08-19T02:20:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="理解配置"><a href="#理解配置" class="headerlink" title="理解配置"></a>理解配置</h2><p>hazelcast.xml的配置像下面这样:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;group&gt;</span><br><span class="line">    &lt;name&gt;dev&lt;/name&gt;</span><br><span class="line">&lt;/group&gt;</span><br><span class="line">&lt;management-center enabled=&quot;false&quot;&gt;http://localhost:8080/mancenter&lt;/management-center&gt;</span><br><span class="line">&lt;network&gt;</span><br><span class="line">     &lt;port auto-increment=&quot;true&quot; port-count=&quot;100&quot;&gt;5701&lt;/port&gt;</span><br><span class="line">     &lt;outbound-ports&gt;</span><br><span class="line">     &lt;!--</span><br><span class="line">     Allowed port range when connecting to other members.</span><br><span class="line">     0 or * means the port provided by the system.</span><br><span class="line">     --&gt;</span><br><span class="line">         &lt;ports&gt;0&lt;/ports&gt;</span><br><span class="line">     &lt;/outbound-ports&gt;</span><br><span class="line">     &lt;join&gt;</span><br><span class="line">         &lt;multicast enabled=&quot;true&quot;&gt;</span><br><span class="line">             &lt;multicast-group&gt;224.2.2.3&lt;/multicast-group&gt;</span><br><span class="line">             &lt;multicast-port&gt;54327&lt;/multicast-port&gt;</span><br><span class="line">         &lt;/multicast&gt;</span><br><span class="line">         &lt;tcp-ip enabled=&quot;false&quot;&gt;</span><br><span class="line">             &lt;interface&gt;127.0.0.1&lt;/interface&gt;</span><br><span class="line">             &lt;member-list&gt;</span><br><span class="line">                 &lt;member&gt;127.0.0.1&lt;/member&gt;</span><br><span class="line">             &lt;/member-list&gt;</span><br><span class="line">         &lt;/tcp-ip&gt;</span><br><span class="line">    &lt;/join&gt;</span><br><span class="line">&lt;/network&gt;</span><br><span class="line">&lt;map name=&quot;default&quot;&gt;</span><br><span class="line">    &lt;time-to-live-seconds&gt;0&lt;/time-to-live-seconds&gt;</span><br><span class="line">&lt;/map</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<ul>
+<li>配置日志类型：hazelcast.logging.type</li>
+<li>配置分区数：hazelcast.partition.count</li>
+<li>配置异步副本数：async-backup-count</li>
+<li>配置可以读本地副本：read-backup-data</li>
+<li>读取副本key不会影响到主key的生存时间，空闲时间。</li>
+</ul>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hazelcast</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/19/Hazelcast-配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-本站试运行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -301,6 +395,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hazelcast</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
